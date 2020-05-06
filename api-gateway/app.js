@@ -7,13 +7,14 @@
 ; Description: app
 ;==============================================================================
 */
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const indexRouter = require('./routes/index');
-const mongoose = require("mongoose");
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let indexRouter = require('./routes/index');
+let mongoose = require("mongoose");
+let apiCatalog = require("./routes/api-catalog");
 
 const conn = "mongodb+srv://jshepherd:71VwzVhDGq3DDozG@buwebdev-cluster-1-solm5.mongodb.net/api-gateway";
 
@@ -39,6 +40,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use("/api", apiCatalog);
 
 app.use('/', indexRouter);
 
