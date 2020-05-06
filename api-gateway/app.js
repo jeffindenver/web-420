@@ -1,3 +1,12 @@
+/*
+===============================================================================
+; Title:  app.js
+; Author: Professor Krasso
+; Date:   5/5/2020
+; Modified By: Jeff Shepherd
+; Description: app
+;==============================================================================
+*/
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -19,7 +28,7 @@ mongoose.connect(conn, {
   console.log(`MongoDB Error: ${err.message}`)
 });
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

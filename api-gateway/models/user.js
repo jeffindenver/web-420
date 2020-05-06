@@ -1,13 +1,9 @@
 /*
 ===============================================================================
-; Title:  config.js
+; Title:  user.js
 ; Author: Professor Krasso
 ; Date:   5/5/2020
 ; Modified By: Jeff Shepherd
-; Description: config file
+; Description: user model
 ;==============================================================================
 */
-let config = {};
-config.web = {};
-config.web.port = process.env.PORT || "3000";
-module.exports = config;
