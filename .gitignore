@@ -1,6 +1,7 @@
 # docs
 .txt
 *.doc*
+.pptx
 
 # IDE
 .vscode
