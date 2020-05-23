@@ -18,4 +18,18 @@ const userSchema = new mongoose.Schema({
   email: String
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports.add = function (user, callback) {
+  user.save(callback);
+};
+
+module.exports.getById = function (id, callback) {
+   let query = {
+     _id: id
+   };
+   User.findById(query, callback);
+ };
+
+module.exports.model = mongoose.model("User", userSchema);
+
+
+console.log(module.exports);
