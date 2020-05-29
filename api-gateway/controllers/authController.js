@@ -18,7 +18,7 @@ const config = require("../config");
 exports.user_register = function (req, res) {
   const hashedPassword = bcrypt.hashSync(req.body.password, 8);
 
-  let newUser = new User.model({
+  let newUser = new User({
     username: req.body.username,
     password: hashedPassword,
     email: req.body.email

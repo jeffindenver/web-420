@@ -18,18 +18,20 @@ const userSchema = new mongoose.Schema({
   email: String
 });
 
-module.exports.add = function (user, callback) {
+const User = mongoose.model("User", userSchema);
+
+User.add = function (user, callback) {
   user.save(callback);
 };
 
-module.exports.getById = function (id, callback) {
-   let query = {
-     _id: id
-   };
-   User.findById(query, callback);
- };
+User.getById = function (id, callback) {
+  const self = this;
+  let query = {
+    _id: id
+  };
+  self.findById(query, callback);
+};
 
-module.exports.model = mongoose.model("User", userSchema);
-
+module.exports = User;
 
 console.log(module.exports);
