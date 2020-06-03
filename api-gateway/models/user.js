@@ -25,11 +25,15 @@ User.add = function (user, callback) {
 };
 
 User.getById = function (id, callback) {
-  const self = this;
   let query = {
     _id: id
   };
-  self.findById(query, callback);
+  this.findById(query, callback);
+};
+
+User.getOne = function (e, callback) {
+  let query = {email: e};
+  this.findOne(query, callback);
 };
 
 module.exports = User;
