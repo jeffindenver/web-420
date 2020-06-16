@@ -11,9 +11,11 @@
 "use strict";
 
 const express = require("express");
+const checkToken = require("../check-token");
 const router = express.Router();
 const auth_controller = require("../controllers/authController");
 
+router.get("/auth/token", checkToken, auth_controller.user_token);
 router.post("/auth/login", auth_controller.user_login);
 router.post("/auth/register", auth_controller.user_register);
 router.get("/auth/token", auth_controller.user_token);

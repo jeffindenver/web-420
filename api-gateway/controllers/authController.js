@@ -81,24 +81,8 @@ exports.user_register = function (req, res) {
 };
 
 exports.user_token = function (req, res) {
-  const token = req.headers["x-access-token"];
 
-  if (!token) {
-    return res.status(401).send({
-      auth: false,
-      message: "No token provided"
-    });
-  }
-
-  jwt.verify(token, config.web.secret, function (err, decoded) {
-    if (err) {
-      return res.status(500).send({
-        auth: false,
-        message: "Failed to authenticate token."
-      });
-    }
-
-    User.getById(decoded.id, function (err, user) {
+    User.getById(req.userId, function (err, user) {
       if (err) {
         return res.status(500).send("There was a problem finding the user.");
       }
@@ -107,7 +91,4 @@ exports.user_token = function (req, res) {
       }
       res.status(200).send(user);
     });
-
-  });
-
 };
