@@ -7,14 +7,14 @@
 ; Description: app
 ;==============================================================================
 */
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
-let indexRouter = require('./routes/index');
-let mongoose = require("mongoose");
-let apiCatalog = require("./routes/api-catalog");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const indexRouter = require('./routes/index');
+const mongoose = require("mongoose");
+const apiCatalog = require("./routes/api-catalog");
 
 //const conn = "mongodb+srv://jshepherd:71VwzVhDGq3DDozG@buwebdev-cluster-1-solm5.mongodb.net/api-gateway";
 const conn = "mongodb://localhost:27017/web335";
