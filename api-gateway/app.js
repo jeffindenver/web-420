@@ -16,8 +16,8 @@ const indexRouter = require('./routes/index');
 const mongoose = require("mongoose");
 const apiCatalog = require("./routes/api-catalog");
 
-//const conn = "mongodb+srv://jshepherd:71VwzVhDGq3DDozG@buwebdev-cluster-1-solm5.mongodb.net/api-gateway";
-const conn = "mongodb://localhost:27017/web335";
+const conn = "mongodb+srv://jshepherd:71VwzVhDGq3DDozG@buwebdev-cluster-1-solm5.mongodb.net/api-gateway";
+//const conn = "mongodb://localhost:27017/web335";
 
 mongoose.connect(conn, {
   promiseLibrary: require("bluebird"),

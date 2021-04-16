@@ -1,2 +1,3 @@
-at command prompt: npm run devstart
+at command prompt:
+npm run devstart
 mongodb://localhost:27017
